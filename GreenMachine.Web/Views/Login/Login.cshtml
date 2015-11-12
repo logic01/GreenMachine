@@ -1,0 +1,52 @@
+﻿@using System.Web.Optimization
+@model GreenMachine.Web.Models.LoginModel
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Login</title>
+
+    @section styles{
+        @Styles.Render("~/Content/css/Login.css")
+    }
+
+    @section scripts{
+        @Styles.Render("~/Scripts/Login.js")
+    }
+
+</head>
+
+<h2>Login</h2>
+<body>
+    @using (Html.BeginForm(new {ReturnUrl = ViewBag.ReturnUrl}))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Log in Form</legend>
+            <div class="passwordBox">
+                <ol>
+                    <li>
+                        @Html.LabelFor(m => m.UserName)
+                        @Html.TextBoxFor(m => m.UserName)
+                        @Html.ValidationMessageFor(m => m.UserName)
+                    </li>
+                    <li>
+                        @Html.LabelFor(m => m.Password)
+                        @Html.PasswordFor(m => m.Password)
+                        @Html.ValidationMessageFor(m => m.Password)
+                    </li>
+                    <li>
+                        @Html.CheckBoxFor(m => m.RememberMe)
+                        @Html.LabelFor(m => m.RememberMe, new {@class = "checkbox"})
+                    </li>
+                </ol>
+            </div>
+            <input type="submit" value="Log in" />
+        </fieldset>
+    }
+</body>

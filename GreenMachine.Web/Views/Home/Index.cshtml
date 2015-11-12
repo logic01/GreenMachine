@@ -1,0 +1,29 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Home page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<head>
+    <title>Login</title>
+
+    @section styles{
+        @Styles.Render("~/Content/css/Index.css")
+    }
+
+    @section scripts{
+        @Styles.Render("~/Scripts/Index.js")
+    }
+
+</head>
+
+<body>
+    <div id="CenterScreen">
+        <div id="ShaddowBox">
+            <div id="InnerBox">
+                @Html.ActionLink("Login", "Login", "Login");
+                @Html.ActionLink("Register", "Register", "Account");
+            </div>	
+        </div>
+    </div>
+</body>

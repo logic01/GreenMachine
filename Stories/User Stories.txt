@@ -1,0 +1,9 @@
+User:
+I would like to login.
+I would like to set my style.
+I would like to set my quick access buttons.
+I would like to search for plant types.
+I would like to enter plant information.
+	I would like to enter plant dna heirarchy.
+	I would like to enter plant feeding schedule.
+	I would like to enter plant light schedule.

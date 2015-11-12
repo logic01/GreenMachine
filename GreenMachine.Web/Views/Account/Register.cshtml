@@ -1,0 +1,50 @@
+﻿@using System.Web.Optimization
+
+@model GreenMachine.Web.Models.RegisterUserModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<head>
+    <title>Register New Account</title>
+
+    @section styles{
+        @Styles.Render("~/Content/css/Register.css")
+    }
+
+    @section Scripts {
+        @Scripts.Render("~/Scripts/Register.js")
+    }
+
+</head>
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Create a new account.</h2>
+</hgroup>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Registration Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.UserName)
+                @Html.TextBoxFor(m => m.UserName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.Password)
+                @Html.PasswordFor(m => m.Password)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.ConfirmPassword)
+                @Html.PasswordFor(m => m.ConfirmPassword)
+            </li>
+        </ol>
+        <input type="submit" value="Register" />
+    </fieldset>
+}
+
